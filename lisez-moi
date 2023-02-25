@@ -1,0 +1,8 @@
+cette application est un pipe line qui build l'image la depose sur le dockerhub
+puis deploie dans deux environnement staggin et production(arbitrairement choisir)
+
+les environnements sont crées sur 2VMs hebergés sur ovh.
+il faut au prealable installe docker sur les vms puis installé l'API pour gerer ce deploiement.
+lien pour l'explication de l'installation de l'API: https://github.com/eazytraining/eazylabs
+le code prend 2 variables quil faut definir dans le pipeline notament le port exposé (81 pour ma part) et le nom du compte dockerhub
+le pipe line est aussi scruter de telle sorte que chaque push sur le github lancera le pipeline automatiquement.
