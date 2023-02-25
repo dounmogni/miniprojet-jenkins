@@ -6,9 +6,9 @@ pipeline {
        // PORT_EXPOSED = "80" à paraméter dans le job obligatoirement
        APP_NAME = "nicolas"
        STG_API_ENDPOINT = "51.254.103.147:1993"
-       STG_APP_ENDPOINT = "51.254.103.147:80"
+       STG_APP_ENDPOINT = "51.254.103.147:81"
        PROD_API_ENDPOINT = "51.178.37.209:1993"
-       PROD_APP_ENDPOINT = "51.178.37.209:80"
+       PROD_APP_ENDPOINT = "51.178.37.209:81"
        INTERNAL_PORT = "80"
        IP = "51.254.103.147"
        EXTERNAL_PORT = "${PORT_EXPOSED}"
@@ -118,10 +118,10 @@ pipeline {
      
   post {
        success {
-         slackSend (color: '#00FF00', message: "NICOLAS - SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) - PROD URL => http://${PROD_APP_ENDPOINT} , STAGING URL => http://${STG_APP_ENDPOINT}")
+         slackSend (color: '#00FF00', message: "nicominiprojet - SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) - PROD URL => http://${PROD_APP_ENDPOINT} , STAGING URL => http://${STG_APP_ENDPOINT}")
          }
       failure {
-            slackSend (color: '#FF0000', message: "NICOLAS - FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+            slackSend (color: '#FF0000', message: "nico-miniprojet- FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
           }   
     }     
 }
